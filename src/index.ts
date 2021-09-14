@@ -112,3 +112,24 @@ const add: MathFunc = (x:number, y:number): number => x + y
 const sub: MathFunc = (x:number, y:number): number => x - y
 
 // Classes
+class Person {
+  // 3 options public by default, private, and protected
+  //private id: number
+  //protected id: number
+  id: number
+  name: string
+
+  constructor(id:number, name:string){
+    this.id = id
+    this.name = name
+  }
+
+  // Adding method in a class
+  register(){
+    return `${this.name} is registered`
+  }
+}
+
+const person1 = new Person(1, 'Mikey')
+
+console.log(person1.register())
