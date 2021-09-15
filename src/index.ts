@@ -111,8 +111,17 @@ interface MathFunc {
 const add: MathFunc = (x:number, y:number): number => x + y
 const sub: MathFunc = (x:number, y:number): number => x - y
 
+
+interface PersonInterface {
+  id:number
+  name: string
+  register(): string
+}
+// adding the interface to a class use implements
+
+
 // Classes
-class Person {
+class Person implements PersonInterface{
   // 3 options public by default, private, and protected
   //private id: number
   //protected id: number
@@ -125,11 +134,30 @@ class Person {
   }
 
   // Adding method in a class
+  // The register is part on the interface must return a string
   register(){
     return `${this.name} is registered`
   }
 }
 
 const person1 = new Person(1, 'Mikey')
-
 console.log(person1.register())
+
+
+//Sub Classes
+class Employee extends Person {
+  position: string
+
+  constructor(id: number, name: string, postion: string){
+    //dont't need to call this.id because we can we super to bring the parent class constructor in
+    super(id, name)
+    this.position = postion
+  }
+}
+
+const emp = new Employee(3, 'Jen', 'Dev')
+console.log(emp.name)
+console.log(emp.register())
+
+
+//Generics

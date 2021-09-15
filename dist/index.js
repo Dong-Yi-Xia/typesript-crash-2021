@@ -60,3 +60,12 @@ class Person {
 }
 const person1 = new Person(1, 'Mikey');
 console.log(person1.register());
+class Employee extends Person {
+    constructor(id, name, postion) {
+        super(id, name);
+        this.position = postion;
+    }
+}
+const emp = new Employee(3, 'Jen', 'Dev');
+console.log(emp.name);
+console.log(emp.register());
