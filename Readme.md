@@ -31,3 +31,7 @@ tsc --init
 Can out which version of ES JS output \
 Allow to change rootDir and outDir
 
+### Create Reactjs using typescript
+```
+npx create-react-app <filename> --template typescript
+```
